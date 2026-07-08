@@ -10,9 +10,9 @@ const SERVICES = [
 ];
 
 const POSTS = [
-  { title: "Five ways clean data drives better decisions", excerpt: "Start with consistent naming, reliable source files, and a simple review rhythm.", date: "Jul 8, 2026" },
-  { title: "When a dashboard should replace a spreadsheet", excerpt: "The right dashboard reduces repeated questions and helps teams act faster.", date: "Jul 8, 2026" },
-  { title: "Automation that keeps people in control", excerpt: "Small workflow improvements can save hours without making your process fragile.", date: "Jul 8, 2026" }
+  { title: "Placeholder 1", excerpt: "Placeholder Text", date: "Jul 8, 2026" },
+  { title: "Example: When a dashboard should replace a spreadsheet", excerpt: "The right dashboard reduces repeated questions and helps teams act faster.", date: "Jul 8, 2026" },
+  { title: "Example: Automation that keeps people in control", excerpt: "Small workflow improvements can save hours without making your process fragile.", date: "Jul 8, 2026" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
