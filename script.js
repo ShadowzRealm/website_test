@@ -10,7 +10,7 @@ const SITE_CONFIG = {
 const SERVICES = [
   { title: "Excel Cleanup", description: "Clean, accurate spreadsheets and reliable workbooks you can trust.", icon: "icon-grid" },
   { title: "Dashboards", description: "Custom dashboards that give you a clear, current view of what is happening.", icon: "icon-chart" },
-  { title: "Analytics", description: "Find trends, spot opportunities, and answer better questions with your data.", icon: "icon-chart" },
+  { title: "Analytics", description: "Find trends, spot opportunities, and answer better questions with your data.", icon: "icon-analytics" },
   { title: "Automation", description: "Automate repetitive tasks and connect the tools you already use.", icon: "icon-gear" },
   { title: "Reporting", description: "Clear, consistent reports that save time and support better decisions.", icon: "icon-file" },
   { title: "Consulting", description: "Strategic guidance and practical solutions tailored to your goals.", icon: "icon-users" }
@@ -19,11 +19,11 @@ const SERVICES = [
 // Set available to true only after the matching screenshot has been added to the repository.
 const PORTFOLIO_MEDIA = {
   database: {
-    title: "Database screenshot coming soon",
-    path: "assets/portfolio/red-dirt/database-preview.webp",
-    alt: "SQLite database structure and sample operational records",
-    caption: "SQLite database structure and sample operational records.",
-    available: false
+    title: "Database-backed dashboard preview",
+    path: "assets/portfolio/red-dirt/database-preview.jpg",
+    alt: "Red Dirt Sports Bar executive dashboard with sales trends and item performance",
+    caption: "Database-backed executive overview built from the Red Dirt Sports Bar portfolio dataset.",
+    available: true
   },
   desktop: {
     title: "Application screenshot coming soon",
@@ -38,9 +38,9 @@ const DASHBOARD_PAGES = [
   {
     title: "Executive Overview",
     description: "A high-level view of revenue, food and drink sales, transactions, average ticket size, tips, weekly trends, top products, staff performance, and payment mix.",
-    path: "assets/portfolio/red-dirt/executive-overview.webp",
-    status: "In development",
-    available: false
+    path: "assets/portfolio/red-dirt/database-preview.jpg",
+    status: "Available",
+    available: true
   },
   {
     title: "Product Performance",
