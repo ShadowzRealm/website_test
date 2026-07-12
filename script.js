@@ -109,9 +109,9 @@ const DASHBOARD_PAGES = [
   {
     title: "Purchasing & Vendors",
     description: "Purchase order activity, vendor spend, delivery status, purchasing trends, and supplier performance.",
-    path: "assets/portfolio/red-dirt/purchasing-vendors.webp",
-    status: "Planned",
-    available: false
+    path: "assets/portfolio/red-dirt/purchasing-vendors.png",
+    status: "Available",
+    available: true
   },
   {
     title: "Inventory Movement",
