@@ -116,9 +116,9 @@ const DASHBOARD_PAGES = [
   {
     title: "Inventory Movement",
     description: "Receipts, consumption, adjustments, usage patterns, and movement by inventory category.",
-    path: "assets/portfolio/red-dirt/inventory-movement.webp",
-    status: "Planned",
-    available: false
+    path: "assets/portfolio/red-dirt/inventory-movement.png",
+    status: "Available",
+    available: true
   },
   {
     title: "Financial Trends",
