@@ -123,9 +123,9 @@ const DASHBOARD_PAGES = [
   {
     title: "Financial Trends",
     description: "Historical sales, seasonality, monthly and weekly performance, growth, and revenue trends.",
-    path: "assets/portfolio/red-dirt/financial-trends.webp",
-    status: "Planned",
-    available: false
+    path: "assets/portfolio/red-dirt/financial-trends.png",
+    status: "Available",
+    available: true
   }
 ];
 
