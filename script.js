@@ -8,22 +8,65 @@ const SITE_CONFIG = {
 };
 
 const SERVICES = [
-  { title: "Excel Cleanup", description: "Clean, accurate spreadsheets and reliable workbooks you can trust.", icon: "icon-grid" },
-  { title: "Dashboards", description: "Custom dashboards that give you a clear, current view of what is happening.", icon: "icon-chart" },
-  { title: "Analytics", description: "Find trends, spot opportunities, and answer better questions with your data.", icon: "icon-analytics" },
-  { title: "Automation", description: "Automate repetitive tasks and connect the tools you already use.", icon: "icon-gear" },
-  { title: "Reporting", description: "Clear, consistent reports that save time and support better decisions.", icon: "icon-file" },
-  { title: "Consulting", description: "Strategic guidance and practical solutions tailored to your goals.", icon: "icon-users" }
+  {
+    title: "Excel Cleanup",
+    problem: "Messy workbooks create slow reporting and decisions nobody fully trusts.",
+    provides: "OCBS cleans, restructures, validates, and organizes spreadsheet data.",
+    outcome: "Teams get dependable files that are easier to maintain and report from.",
+    icon: "icon-grid"
+  },
+  {
+    title: "Dashboards",
+    problem: "Important numbers are often scattered across files, systems, and manual updates.",
+    provides: "OCBS builds focused dashboards around the metrics that actually guide decisions.",
+    outcome: "Leaders get a clear view of performance without digging through raw data.",
+    icon: "icon-chart"
+  },
+  {
+    title: "Databases and Applications",
+    problem: "Spreadsheets can become fragile when they start acting like full operational systems.",
+    provides: "OCBS designs practical local databases and simple applications for structured workflows.",
+    outcome: "Data entry, storage, and reporting can work from a more reliable foundation.",
+    icon: "icon-database"
+  },
+  {
+    title: "Analytics",
+    problem: "Organizations can collect data without knowing what it is really saying.",
+    provides: "OCBS reviews trends, comparisons, drivers, and outliers in practical language.",
+    outcome: "You can spot issues, opportunities, and next steps with more confidence.",
+    icon: "icon-analytics"
+  },
+  {
+    title: "Automation",
+    problem: "Repeated manual tasks waste time and increase the chance of avoidable errors.",
+    provides: "OCBS automates routine workflows and connects the tools already in use.",
+    outcome: "Staff spend less time copying, cleaning, and rebuilding the same work.",
+    icon: "icon-gear"
+  },
+  {
+    title: "Reporting",
+    problem: "Reports often take too long to build and vary depending on who prepares them.",
+    provides: "OCBS creates repeatable reporting structures with consistent definitions.",
+    outcome: "Regular updates become faster, clearer, and easier to explain.",
+    icon: "icon-file"
+  },
+  {
+    title: "Consulting",
+    problem: "It is not always clear whether the right fix is a spreadsheet, database, dashboard, or process change.",
+    provides: "OCBS helps define the problem, compare options, and choose a practical path.",
+    outcome: "Projects start with the business need instead of unnecessary complexity.",
+    icon: "icon-users"
+  }
 ];
 
 // Set available to true only after the matching screenshot has been added to the repository.
 const PORTFOLIO_MEDIA = {
   database: {
-    title: "Database-backed dashboard preview",
-    path: "assets/portfolio/red-dirt/database-preview.jpg",
-    alt: "Red Dirt Sports Bar executive dashboard with sales trends and item performance",
-    caption: "Database-backed executive overview built from the Red Dirt Sports Bar portfolio dataset.",
-    available: true
+    title: "Database visual pending",
+    path: "assets/portfolio/red-dirt/database-schema.webp",
+    alt: "Database visual pending",
+    caption: "Database visual will be added later.",
+    available: false
   },
   desktop: {
     title: "Application screenshot coming soon",
@@ -37,7 +80,7 @@ const PORTFOLIO_MEDIA = {
 const DASHBOARD_PAGES = [
   {
     title: "Executive Overview",
-    description: "A high-level view of revenue, food and drink sales, transactions, average ticket size, tips, weekly trends, top products, staff performance, and payment mix.",
+    description: "A high-level view of total sales, food and drink revenue, transaction volume, average ticket size, tips, weekly sales trends, top products, bartender performance, and payment-method distribution.",
     path: "assets/portfolio/red-dirt/database-preview.jpg",
     status: "Available",
     available: true
@@ -166,7 +209,11 @@ function renderServices() {
       <span class="service-icon" aria-hidden="true"><svg><use href="#${escapeAttribute(service.icon)}"></use></svg></span>
       <div>
         <h3>${escapeHTML(service.title)}</h3>
-        <p>${escapeHTML(service.description)}</p>
+        <p>${escapeHTML(service.problem)}</p>
+        <dl class="service-outcomes">
+          <div><dt>Provides</dt><dd>${escapeHTML(service.provides)}</dd></div>
+          <div><dt>Outcome</dt><dd>${escapeHTML(service.outcome)}</dd></div>
+        </dl>
       </div>
     </article>
   `).join("");
@@ -205,7 +252,7 @@ function setupContactForm() {
     contactEmail: "Please enter a valid email address.",
     contactService: "Please select the service you need.",
     contactDetails: "Please include a short description of your project.",
-    contactConsent: "Please confirm that Orahood may contact you about this request."
+    contactConsent: "Please confirm that Orahood CBS may contact you about this request."
   };
 
   const showFieldState = (field) => {
@@ -243,7 +290,7 @@ function setupContactForm() {
     if (honeypot?.value) return;
 
     if (!CONTACT_FORM_ENDPOINT) {
-      status.textContent = "Online form delivery is being connected. Please contact Dalton directly by email or phone for now.";
+      status.textContent = "The contact form is temporarily unavailable. Please contact Dalton directly by email or phone for now.";
       status.classList.add("status-notice");
       return;
     }
@@ -266,7 +313,7 @@ function setupContactForm() {
         const error = document.querySelector(`#${field.id}Error`);
         if (error) error.textContent = "";
       });
-      status.textContent = "Your project request was sent. Orahood will follow up as soon as possible.";
+      status.textContent = "Your project request was sent. Orahood CBS will follow up as soon as possible.";
       status.classList.add("status-success");
     } catch (error) {
       console.error("Contact form submission failed:", error);
