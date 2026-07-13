@@ -2,7 +2,7 @@
 const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/xkodwbar";
 
 const SITE_CONFIG = {
-  facebookUrl: "",
+  facebookUrl: "https://www.facebook.com/share/1DryYraQMj/?mibextid=wwXIfr",
   linkedinUrl: "",
   youtubeVideoId: "",
   demoVideo: {
