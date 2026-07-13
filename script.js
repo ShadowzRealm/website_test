@@ -13,52 +13,52 @@ const SITE_CONFIG = {
 
 const SERVICES = [
   {
-    title: "Excel Cleanup",
-    problem: "Messy workbooks create slow reporting and decisions nobody fully trusts.",
-    provides: "OCBS cleans, restructures, validates, and organizes spreadsheet data.",
-    outcome: "Teams get dependable files that are easier to maintain and report from.",
+    title: "Assess and Clean Data",
+    problem: "Reports disagree, source files are messy, or nobody fully trusts the numbers.",
+    provides: "OCBS reviews the files, cleans and restructures data, documents definitions, and identifies gaps before building on top of it.",
+    outcome: "Your team gets a clearer source foundation for decisions, reporting, and future system work.",
     icon: "icon-grid"
   },
   {
-    title: "Dashboards",
-    problem: "Important numbers are often scattered across files, systems, and manual updates.",
-    provides: "OCBS builds focused dashboards around the metrics that actually guide decisions.",
-    outcome: "Leaders get a clear view of performance without digging through raw data.",
-    icon: "icon-chart"
-  },
-  {
-    title: "Databases and Applications",
-    problem: "Spreadsheets can become fragile when they start acting like full operational systems.",
-    provides: "OCBS designs practical local databases and simple applications for structured workflows.",
-    outcome: "Data entry, storage, and reporting can work from a more reliable foundation.",
+    title: "Build the Source of Truth",
+    problem: "Spreadsheets are acting like a database and the operating record is becoming fragile.",
+    provides: "OCBS designs practical local databases or appropriate structured data models with clear relationships and ownership.",
+    outcome: "Data entry, reporting, and auditability can work from a more reliable foundation.",
     icon: "icon-database"
   },
   {
-    title: "Analytics",
-    problem: "Organizations can collect data without knowing what it is really saying.",
-    provides: "OCBS reviews trends, comparisons, drivers, and outliers in practical language.",
-    outcome: "You can spot issues, opportunities, and next steps with more confidence.",
-    icon: "icon-analytics"
-  },
-  {
-    title: "Automation",
-    problem: "Repeated manual tasks waste time and increase the chance of avoidable errors.",
-    provides: "OCBS automates routine workflows and connects the tools already in use.",
-    outcome: "Staff spend less time copying, cleaning, and rebuilding the same work.",
+    title: "Create Workflow Tools",
+    problem: "Daily work depends on manual steps, repeated entry, or files that were never meant to run operations.",
+    provides: "OCBS builds simple desktop or web workflow tools when they reduce operating friction and protect the source data.",
+    outcome: "Staff can use a clearer process instead of rebuilding the same fragile workarounds.",
     icon: "icon-gear"
   },
   {
-    title: "Reporting",
-    problem: "Reports often take too long to build and vary depending on who prepares them.",
-    provides: "OCBS creates repeatable reporting structures with consistent definitions.",
-    outcome: "Regular updates become faster, clearer, and easier to explain.",
+    title: "Report Decisions",
+    problem: "Owners and leaders need a clear view of performance without digging through raw files.",
+    provides: "OCBS designs dashboards and recurring reports tied to known definitions, source data, and practical questions.",
+    outcome: "The business can see trends, exceptions, and priorities faster and explain them more consistently.",
+    icon: "icon-chart"
+  },
+  {
+    title: "Automate Routine Work",
+    problem: "Staff rebuild reports, copy files, clean the same data, or repeat avoidable manual checks.",
+    provides: "OCBS automates refreshes, exports, validation checks, templates, and routine workflow steps.",
+    outcome: "The team spends less time on repetitive work and more time using the information.",
+    icon: "icon-gear"
+  },
+  {
+    title: "Support and Maintain",
+    problem: "A useful system still needs clear documentation, backups, updates, and support boundaries.",
+    provides: "OCBS offers scoped maintenance, documentation support, checkups, and small improvements after launch.",
+    outcome: "Systems stay understandable and useful instead of becoming another unsupported black box.",
     icon: "icon-file"
   },
   {
-    title: "Consulting",
-    problem: "It is not always clear whether the right fix is a spreadsheet, database, dashboard, or process change.",
-    provides: "OCBS helps define the problem, compare options, and choose a practical path.",
-    outcome: "Projects start with the business need instead of unnecessary complexity.",
+    title: "Consulting and Systems Assessment",
+    problem: "It is not always clear whether the right answer is cleanup, reporting, automation, a database, or no custom build.",
+    provides: "OCBS helps define the problem, compare practical options, and scope a paid assessment when deeper review is needed.",
+    outcome: "Projects start with the business need instead of unnecessary technical theater.",
     icon: "icon-users"
   }
 ];
