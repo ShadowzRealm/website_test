@@ -4725,13 +4725,7 @@ label span em {
   }
 
   .case-hero-product {
-    opacity: 0.26;
-  }
-
-  .case-hero-screen-main {
-    right: -58vw;
-    bottom: 58px;
-    width: 132vw;
+    display: none;
   }
 
   .form-intro,

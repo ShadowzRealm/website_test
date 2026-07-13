@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderVideo();
   setupLightbox();
   setCurrentYear();
+  scrollToHashTarget();
 });
 
 function setupNavigation() {
@@ -403,7 +404,7 @@ function createMediaMarkup(media) {
     return `
       <figure class="case-media-figure">
         <button class="media-trigger" type="button" data-lightbox-src="${escapeAttribute(media.path)}" data-lightbox-title="${escapeAttribute(media.caption)}" data-lightbox-description="" aria-label="Enlarge ${escapeAttribute(media.alt)}">
-          <img src="${escapeAttribute(media.path)}" alt="${escapeAttribute(media.alt)}" loading="lazy" width="1600" height="900">
+          <img src="${escapeAttribute(media.path)}" alt="${escapeAttribute(media.alt)}" decoding="async" loading="lazy" width="1600" height="900">
         </button>
         <figcaption>${escapeHTML(media.caption)}</figcaption>
       </figure>`;
@@ -426,7 +427,7 @@ function renderDashboardGallery() {
 
   target.innerHTML = DASHBOARD_PAGES.map((page, index) => {
     const media = page.available
-      ? `<button class="dashboard-image media-trigger" type="button" data-lightbox-src="${escapeAttribute(page.path)}" data-lightbox-title="${escapeAttribute(page.title)}" data-lightbox-description="${escapeAttribute(page.description)}" aria-label="Enlarge ${escapeAttribute(page.title)} dashboard screenshot"><img src="${escapeAttribute(page.path)}" alt="${escapeAttribute(page.title)} Power BI dashboard page" loading="lazy" width="1600" height="900"></button>`
+      ? `<button class="dashboard-image media-trigger" type="button" data-lightbox-src="${escapeAttribute(page.path)}" data-lightbox-title="${escapeAttribute(page.title)}" data-lightbox-description="${escapeAttribute(page.description)}" aria-label="Enlarge ${escapeAttribute(page.title)} dashboard screenshot"><img src="${escapeAttribute(page.path)}" alt="${escapeAttribute(page.title)} Power BI dashboard page" decoding="async" loading="lazy" width="1600" height="900"></button>`
       : `<div class="dashboard-image dashboard-placeholder" data-planned-image="${escapeAttribute(page.path)}" role="img" aria-label="${escapeAttribute(page.title)} dashboard screenshot coming soon"><span>${String(index + 1).padStart(2, "0")}</span><strong>Dashboard screenshot<br>coming soon</strong><small>${escapeHTML(page.path)}</small></div>`;
 
     return `
@@ -450,7 +451,7 @@ function renderApplicationGallery() {
   target.innerHTML = APPLICATION_SCREENSHOTS.map((page) => `
     <article class="app-shot-card">
       <button class="app-shot-image media-trigger" type="button" data-lightbox-src="${escapeAttribute(page.path)}" data-lightbox-title="${escapeAttribute(page.title)}" data-lightbox-description="${escapeAttribute(page.description)}" aria-label="Enlarge ${escapeAttribute(page.alt)}">
-        <img src="${escapeAttribute(page.path)}" alt="${escapeAttribute(page.alt)}" loading="lazy" width="1600" height="900">
+        <img src="${escapeAttribute(page.path)}" alt="${escapeAttribute(page.alt)}" decoding="async" loading="lazy" width="1600" height="900">
       </button>
       <div class="app-shot-copy">
         <h3>${escapeHTML(page.title)}</h3>
@@ -465,10 +466,13 @@ function renderVideo() {
   if (!target) return;
 
   if (SITE_CONFIG.demoVideo?.src) {
+    const captions = SITE_CONFIG.demoVideo.captions
+      ? `<track kind="captions" src="${escapeAttribute(SITE_CONFIG.demoVideo.captions)}" srclang="en" label="English captions" default>`
+      : "";
     target.innerHTML = `
       <video class="portfolio-video" controls preload="metadata" poster="${escapeAttribute(SITE_CONFIG.demoVideo.poster)}">
         <source src="${escapeAttribute(SITE_CONFIG.demoVideo.src)}" type="video/mp4">
-        <track kind="captions" src="${escapeAttribute(SITE_CONFIG.demoVideo.captions)}" srclang="en" label="English captions" default>
+        ${captions}
         Your browser does not support the HTML5 video player. Please contact Orahood Custom Business Solutions for the project walkthrough.
       </video>`;
     return;
@@ -485,7 +489,7 @@ function renderVideo() {
   }
 
   const id = encodeURIComponent(SITE_CONFIG.youtubeVideoId);
-  target.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Red Dirt Sports Bar BI Suite project walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  target.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Red Dirt Sports Bar BI Suite project walkthrough" decoding="async" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
 }
 
 function setupLightbox() {
@@ -532,6 +536,17 @@ function setupLightbox() {
 function setCurrentYear() {
   document.querySelectorAll("[data-current-year]").forEach((target) => {
     target.textContent = String(new Date().getFullYear());
+  });
+}
+
+function scrollToHashTarget() {
+  if (!window.location.hash) return;
+  const id = window.location.hash.slice(1);
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  requestAnimationFrame(() => {
+    target.scrollIntoView({ block: "start" });
   });
 }
 
