@@ -378,6 +378,23 @@
             <p>A music-backed walkthrough demonstrates the desktop application, the source-backed SQLite model, and the Power BI reporting layer without fake narration or external caption tracks.</p>
           </div>
           <div id="videoContainer" class="video-container"></div>
+          <details class="video-transcript">
+            <summary>Read video transcript</summary>
+            <ol>
+              <li>Red Dirt Sports Bar Operations System combines a Python desktop application, an SQLite operational database, and a Power BI reporting suite.</li>
+              <li>The dashboard opens on the latest available business date, with sales, transactions, average ticket, active inventory, low stock, and recent purchase orders visible from the live database.</li>
+              <li>Transaction entry is designed like a focused point-of-sale workflow. Staff can choose an employee, search menu items, build a cart, review tax and tip, and confirm the final total.</li>
+              <li>Inventory management brings search, category filters, low-stock visibility, reorder thresholds, item details, and ledger-backed adjustment controls into one local screen.</li>
+              <li>Menu and recipe tools connect prices, active status, ingredients, and inventory usage, so reporting and stock movement stay tied to the same operational model.</li>
+              <li>Purchasing tracks vendors, purchase orders, order status, item quantities, receipt workflow, and order totals without moving the workflow into cloud software.</li>
+              <li>Employee records support the transaction workflow while keeping active status and role information available for operations reporting.</li>
+              <li>The SQLite database is the local source of truth for transactions, line items, inventory, recipes, vendors, purchase orders, employees, events, and operational exceptions.</li>
+              <li>The Power BI report uses a separate reporting copy for portfolio safety, turning the operating records into executive, product, inventory, employee, purchasing, movement, and financial views.</li>
+              <li>The system screen exposes practical local tools: connection status, database information, backups, integrity checks, foreign-key checks, and CSV exports.</li>
+              <li>The architecture stays intentionally simple: Tkinter for daily operations, SQLite for local structured data, and Power BI for management reporting.</li>
+              <li>OCBS builds local systems, custom business workflows, and operational reporting around how a business actually works.</li>
+            </ol>
+          </details>
         </div>
       </section>
 
@@ -407,7 +424,7 @@
       </section>
     </main>
 
-    <dialog id="mediaLightbox" class="media-lightbox" aria-labelledby="lightboxTitle">
+    <dialog id="mediaLightbox" class="media-lightbox" aria-labelledby="lightboxTitle" aria-describedby="lightboxDescription">
       <div class="lightbox-frame">
         <button class="lightbox-close" type="button" aria-label="Close image">
           <svg aria-hidden="true"><use href="#icon-close"></use></svg>
