@@ -4940,6 +4940,10 @@ label span em {
   object-fit: cover;
 }
 
+.ember-application-gallery .app-shot-image img {
+  object-fit: contain;
+}
+
 .app-shot-copy {
   padding: 24px;
 }
